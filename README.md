@@ -1,1 +1,2 @@
-# trelloyes
+# trelloyes assignment
+Props and Components
