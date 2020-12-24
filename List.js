@@ -1,6 +1,7 @@
 import React from 'react'
 import Card from './Card'
 import './List.css'
+import './Card.css'
 
 function List(props) {
     return (
@@ -9,8 +10,18 @@ function List(props) {
                 <h2>{props.header}</h2>
             </header>
             <div className='List-cards'>
-                {props.cards.map(item => <Card title={item.title} content={item.content} />)}
+                {props.cards.map(item => 
+                <Card 
+                    title={item.title} 
+                    content={item.content}
+                    id={item.id}
+                    onDeleteCard={props.onDeleteCard} 
+                />)}
             </div>
+            <br/>
+            <button className='Card' onClick={e=>props.onRandomCard(props.id)}>
+                Add Random Card
+            </button>
         </div>
     )
 }
